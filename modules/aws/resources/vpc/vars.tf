@@ -15,6 +15,7 @@ variable "environment-name" {}
 variable "environment-display-name" {}
 variable "environment_type" {}
 variable "environment-durability-type" {}
+variable "environment-size" {}
 
 # ---------------------------------------------------------------------------
 # VPC Variables

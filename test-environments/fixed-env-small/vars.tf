@@ -13,7 +13,7 @@ variable "region" {
   default = "us-east-1"
 }
 
-variable "availability_zone" {
+variable "availability-zone-lookup" {
   description = "Availability Zones per region and failure zones"
   type = "map"
   default = {
@@ -77,5 +77,8 @@ variable "environment_type" {
 }
 variable "environment-durability-type" {
     description = "Durability type for the environment.  eg: fixed, disposable, short-term, etc"
+}
+variable "environment-size" {
+    description = "The size of the environment"
 }
 
