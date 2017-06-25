@@ -1,11 +1,4 @@
 # ---------------------------------------------------------------------------
-# Set Environment Instance Id
-# ---------------------------------------------------------------------------
-resource "random_id" "env-instance" {
-  byte_length = 8
-}
-
-# ---------------------------------------------------------------------------
 # VPC
 # ---------------------------------------------------------------------------
 resource "aws_vpc" "jra_vpc" {
@@ -18,7 +11,7 @@ resource "aws_vpc" "jra_vpc" {
         jra.environment = "${var.environment-name}",
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${random_id.env-instance.b64}"
+        jra.environment-instance-id = "${var.environment-instance-id}"
     }
 }
 
@@ -33,7 +26,7 @@ resource "aws_internet_gateway" "jra_igw" {
         jra.environment = "${var.environment-name}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${random_id.env-instance.b64}"
+        jra.environment-instance-id = "${var.environment-instance-id}"
     }
 }
 
@@ -53,7 +46,7 @@ resource "aws_route_table" "public" {
         jra.environment = "${var.environment-name}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${random_id.env-instance.b64}"
+        jra.environment-instance-id = "${var.environment-instance-id}"
     }
 }
 
@@ -73,6 +66,6 @@ resource "aws_route_table" "private" {
         jra.environment = "${var.environment-name}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${random_id.env-instance.b64}"
+        jra.environment-instance-id = "${var.environment-instance-id}"
     }
 }

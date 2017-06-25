@@ -53,6 +53,9 @@ variable "private_subnet_cidr" {
 variable "environment-group" {
     description = "The group this environment belongs to.  This field allows to group environments of the same group. "
 }
+variable "environment-instance-id" {
+    description = "The instance id for the enviornment.  This instance id will be created everytime the enviornment is created.  So, technically you can have multiple instances of the same enviornment running"
+}
 variable "environment-canonical-id" {
     description = "The canonical id for the enviornment."
 }

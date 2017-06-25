@@ -1,7 +1,17 @@
+# ---------------------------------------------------------------------------
+# Set Environment Instance Id
+# ---------------------------------------------------------------------------
 provider "aws" {
   access_key = "${var.aws_access_key}"
   secret_key = "${var.aws_secret_key}"
   region     = "${var.region}"
+}
+
+# ---------------------------------------------------------------------------
+# Set Environment Instance Id
+# ---------------------------------------------------------------------------
+resource "random_id" "env-instance" {
+  byte_length = 8
 }
 
 module "vpc" {
@@ -14,6 +24,7 @@ module "vpc" {
   vpc_cidr = "${var.vpc_cidr}"
   environment-group = "${var.environment-group}"
   environment-canonical-id = "${var.environment-canonical-id}"
+  environment-instance-id = "${random_id.env-instance.b64}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
   environment_type = "${var.environment_type}"
