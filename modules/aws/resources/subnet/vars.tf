@@ -9,7 +9,7 @@ variable "availability-zone-lookup" { type = "map" }
 # ---------------------------------------------------------------------------
 variable "aws-vpc-id" {}
 variable "aws-internet-gateway-id" {}
-variable "aws-route-table-id" {}
+variable "aws-route-table  -id" {}
 variable "aws-subnet-type" {}
 
 # ---------------------------------------------------------------------------

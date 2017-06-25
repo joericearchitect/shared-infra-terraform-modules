@@ -2,7 +2,6 @@
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {}
-variable "availability-zone-lookup" { type = "map" }
 
 # ---------------------------------------------------------------------------
 # AWS Resource Variables
