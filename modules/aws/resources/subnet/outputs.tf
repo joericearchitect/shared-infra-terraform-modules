@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------
 # Output Variables
 # ---------------------------------------------------------------------------
-output "aws-route-table-id" {
-  value = "${aws_route_table.route-table.id}"
+output "aws-subnet-id" {
+  value = "${aws_subnet.subnet.id}"
 }
