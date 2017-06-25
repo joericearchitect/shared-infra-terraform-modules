@@ -36,6 +36,8 @@ module "vpc"  {
 }
 
 module "internet-gateway"  {
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/internet-gateway"
+  
   region = "${var.region}"
   availability-zone-lookup = "${var.availability-zone-lookup}"
   
