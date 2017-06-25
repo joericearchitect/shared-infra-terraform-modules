@@ -10,7 +10,7 @@ variable "aws_key_name" {}
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "availability_zone" {
