@@ -28,27 +28,6 @@ variable "availability_zone" {
   }
 }
 
-
-# ---------------------------------------------------------------------------
-# JRA Infra Variables
-# ---------------------------------------------------------------------------
-variable "environment" {
-    description = "The environment this resource is running in"
-	default = "latest"
-}
-variable "environment_type" {
-    description = "The environment this resource is running in"
-	default = "latest"
-}
-variable "environment-flip" {
-    description = "whether this region is running as blue or green"
-	default = "blue"
-}
-variable "environment-size" {
-    description = "Size of an environment"
-    default = "small"
-}
-
 # ---------------------------------------------------------------------------
 # VPC Variables
 # ---------------------------------------------------------------------------
@@ -65,5 +44,38 @@ variable "public_subnet_cidr" {
 variable "private_subnet_cidr" {
     description = "CIDR for the Private Subnet"
     default = "10.0.1.0/24"
+}
+
+
+# ---------------------------------------------------------------------------
+# JRA Infra Variables
+# ---------------------------------------------------------------------------
+variable "environment-group" {
+    description = "The group this environment belongs to.  This field allows to group environments of the same group. "
+}
+variable "environment-canonical-id" {
+    description = "The canonical id for the enviornment."
+}
+variable "environment-display-id" {
+    description = "The display id of the environment.  This id is url-friendly and will be used in UIs, logging, metrics, etc"
+}
+
+variable "environment" {
+    description = "The environment this resource is running in"
+}
+variable "environment-name" {
+    description = "The name of the environment"
+}
+variable "environment-display-name" {
+    description = "The display name of the environment"
+}
+variable "environment-description" {
+    description = "A description of the enviornment"
+}
+variable "environment_type" {
+    description = "The environment this resource is running in"
+}
+variable "environment-durability-type" {
+    description = "Durability type for the environment.  eg: fixed, disposable, short-term, etc"
 }
 

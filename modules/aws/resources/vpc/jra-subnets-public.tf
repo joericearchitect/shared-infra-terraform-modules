@@ -8,11 +8,11 @@ resource "aws_subnet" "az-1-public" {
 	vpc_id = "${aws_vpc.jra_vpc.id}"
 
 	cidr_block = "10.0.0.0/24"
-	availability_zone = "${lookup(var.availability_zone, "${var.region}.az-1")}"
+	availability_zone = "${lookup(var.availability-zone-lookup, "${var.region}.az-1")}"
 	map_public_ip_on_launch = "true"
 
 	tags {
-        Name = "${var.environment}.subnet.${lookup(var.availability_zone, "${var.region}.az-1")}-public",
+        Name = "${var.environment}.subnet.${lookup(var.availability-zone-lookup, "${var.region}.az-1")}-public",
         jra.environment = "${var.environment}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
@@ -25,11 +25,11 @@ resource "aws_subnet" "az-2-public" {
 	vpc_id = "${aws_vpc.jra_vpc.id}"
 
 	cidr_block = "10.0.2.0/24"
-	availability_zone = "${lookup(var.availability_zone, "${var.region}.az-2")}",
+	availability_zone = "${lookup(var.availability-zone-lookup, "${var.region}.az-2")}",
 	map_public_ip_on_launch = "true"
 
 	tags {
-        Name = "${var.environment}.subnet.${lookup(var.availability_zone, "${var.region}.az-2")}-public",
+        Name = "${var.environment}.subnet.${lookup(var.availability-zone-lookup, "${var.region}.az-2")}-public",
         jra.environment = "${var.environment}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
@@ -42,11 +42,11 @@ resource "aws_subnet" "az-3-public" {
 	vpc_id = "${aws_vpc.jra_vpc.id}"
 
 	cidr_block = "10.0.4.0/24"
-	availability_zone = "${lookup(var.availability_zone, "${var.region}.az-3")}",
+	availability_zone = "${lookup(var.availability-zone-lookup, "${var.region}.az-3")}",
 	map_public_ip_on_launch = "true"
 
 	tags {
-        Name = "${var.environment}.subnet.${lookup(var.availability_zone, "${var.region}.az-3")}-public",
+        Name = "${var.environment}.subnet.${lookup(var.availability-zone-lookup, "${var.region}.az-3")}-public",
         jra.environment = "${var.environment}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
