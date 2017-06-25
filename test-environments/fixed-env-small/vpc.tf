@@ -1,15 +1,6 @@
 # ---------------------------------------------------------------------------
 # Set Environment Instance Id
 # ---------------------------------------------------------------------------
-provider "aws" {
-  access_key = "${var.aws_access_key}"
-  secret_key = "${var.aws_secret_key}"
-  region     = "${var.region}"
-}
-
-# ---------------------------------------------------------------------------
-# Set Environment Instance Id
-# ---------------------------------------------------------------------------
 resource "random_id" "env-instance" {
   byte_length = 8
 }
@@ -39,7 +30,6 @@ module "internet-gateway"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/internet-gateway"
   
   region = "${var.region}"
-  availability-zone-lookup = "${var.availability-zone-lookup}"
   
   aws-vpc-id = "${module.vpc.aws-vpc-id}"
   

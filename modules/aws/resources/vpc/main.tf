@@ -16,21 +16,6 @@ resource "aws_vpc" "jra_vpc" {
 }
 
 # ---------------------------------------------------------------------------
-# Internet Gateway
-# ---------------------------------------------------------------------------
-resource "aws_internet_gateway" "jra_igw" {
-	vpc_id = "${aws_vpc.jra_vpc.id}",
-
-	tags {
-        Name = "${var.environment-name}.igw.${var.region}",
-        jra.environment = "${var.environment-name}"
-        jra.environment_type = "${var.environment_type}",
-    	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${var.environment-instance-id}"
-    }
-}
-
-# ---------------------------------------------------------------------------
 # Routing table for public subnets
 # ---------------------------------------------------------------------------
 resource "aws_route_table" "public" {
@@ -51,7 +36,7 @@ resource "aws_route_table" "public" {
 }
 
 # ---------------------------------------------------------------------------
-# Routing table for public subnets
+# Routing table for private subnets
 # ---------------------------------------------------------------------------
 resource "aws_route_table" "private" {
 	vpc_id = "${aws_vpc.jra_vpc.id}"
