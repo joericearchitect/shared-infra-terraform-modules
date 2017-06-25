@@ -1,7 +1,9 @@
 module "aws" {
-  source = "./../../modules/aws/resources/aws"
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/aws"
+  
+  region = "${var.region}"
 }
 
 module "vpc" {
-  source = "./../../modules/aws/resources/vpc"
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/vpc"
 }

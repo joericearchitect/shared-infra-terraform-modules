@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Region, Avail Zone, and AMI Info
+# AWS Access & Key variables - must be passed ins
 # ---------------------------------------------------------------------------
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
@@ -10,7 +10,7 @@ variable "aws_key_name" {}
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {
-  default = "us-east-1"
+  default = "us-east-2"
 }
 
 variable "availability_zone" {
