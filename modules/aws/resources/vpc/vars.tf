@@ -2,7 +2,7 @@
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {}
-variable "availability-zone-lookup" {}
+variable "availability-zone-lookup" { type = "map" }
 
 # ---------------------------------------------------------------------------
 # JRA Infra Variables
