@@ -10,7 +10,6 @@ variable "availability-zone-lookup" { type = "map" }
 variable "environment-group" {}
 variable "environment-canonical-id" {}
 variable "environment-display-id" {}
-variable "environment" {}
 variable "environment-name" {}
 variable "environment-display-name" {}
 variable "environment_type" {}

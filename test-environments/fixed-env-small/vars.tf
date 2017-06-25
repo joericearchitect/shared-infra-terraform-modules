@@ -59,10 +59,6 @@ variable "environment-canonical-id" {
 variable "environment-display-id" {
     description = "The display id of the environment.  This id is url-friendly and will be used in UIs, logging, metrics, etc"
 }
-
-variable "environment" {
-    description = "The environment this resource is running in"
-}
 variable "environment-name" {
     description = "The name of the environment"
 }

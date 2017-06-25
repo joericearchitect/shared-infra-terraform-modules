@@ -14,7 +14,6 @@ module "vpc" {
   vpc_cidr = "${var.vpc_cidr}"
   environment-group = "${var.environment-group}"
   environment-canonical-id = "${var.environment-canonical-id}"
-  environment = "${var.environment}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
   environment_type = "${var.environment_type}"
