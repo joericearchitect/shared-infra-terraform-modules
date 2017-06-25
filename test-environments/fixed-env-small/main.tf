@@ -6,4 +6,6 @@ module "aws" {
 
 module "vpc" {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/vpc"
+  
+  region = "${var.region}"
 }
