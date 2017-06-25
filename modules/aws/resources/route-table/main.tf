@@ -14,7 +14,7 @@ resource "aws_route_table" "route-table" {
         jra.environment = "${var.environment-name}"
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",
-        jra.environment-instance-id = "${var.environment-instance-id},
+        jra.environment-instance-id = "${var.environment-instance-id}",
         jra-subnet-type = "${var.jra-subnet-type}"
     }
 }
