@@ -33,22 +33,18 @@ variable "availability-zone-lookup" {
 # ---------------------------------------------------------------------------
 variable "vpc_cidr" {
     description = "CIDR for the whole VPC"
-    default = "10.0.0.0/16"
 }
 
-variable "subnet_cidr-prefix" {
+variable "subnet-cidr-prefix" {
     description = "CIDR for the Public Subnet"
-    default = "10.0"
 }
 
 variable "subnet-cidr-postfix" {
     description = "CIDR for the Public Subnet"
-    default = "0"
 }
 
 variable "subnet-cidr-range" {
     description = "CIDR for the Public Subnet"
-    default = "24"
 }
 
 

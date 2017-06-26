@@ -12,8 +12,6 @@ module "vpc"  {
   availability-zone-lookup = "${var.availability-zone-lookup}"
   
   vpc_cidr = "${var.vpc_cidr}"
-  public_subnet_cidr = "${var.public_subnet_cidr}"
-  private_subnet_cidr = "${var.private_subnet_cidr}"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${random_id.env-instance.b64}"
@@ -95,6 +93,12 @@ module "public-subnet"  {
   aws-route-table-id = "${module.public-route-table.aws-route-table-id}"
   jra-subnet-type = "public"
   
+  subnet-cidr-prefix = "${var.subnet-cidr-prefix}"
+  subnet-cidr-unique = "1"
+  subnet-cidr-unique = "${var.subnet-cidr-unique}"
+  subnet-cidr-range = "${var.subnet-cidr-range}"
+  subnet-config-public-ip-on-launch = "true"
+  
   environment-group= "${var.environment-group}"
   environment-instance-id = "${random_id.env-instance.b64}"
   environment-canonical-id = "${var.environment-canonical-id}"
@@ -115,6 +119,12 @@ module "private-subnet"  {
   aws-internet-gateway-id = "${module.internet-gateway.aws-internet-gateway-id}"
   aws-route-table-id = "${module.private-route-table.aws-route-table-id}"
   jra-subnet-type = "private"
+ 
+  subnet-cidr-prefix = "${var.subnet-cidr-prefix}"
+  subnet-cidr-unique = "2"
+  subnet-cidr-unique = "${var.subnet-cidr-unique}"
+  subnet-cidr-range = "${var.subnet-cidr-range}"
+  subnet-config-public-ip-on-launch = "true"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${random_id.env-instance.b64}"
