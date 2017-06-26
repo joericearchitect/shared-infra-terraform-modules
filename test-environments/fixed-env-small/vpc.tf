@@ -95,7 +95,7 @@ module "public-subnet"  {
   
   subnet-cidr-prefix = "${var.subnet-cidr-prefix}"
   subnet-cidr-unique = "1"
-  subnet-cidr-unique = "${var.subnet-cidr-unique}"
+  subnet-cidr-postfix = "${var.subnet-cidr-postfix}"
   subnet-cidr-range = "${var.subnet-cidr-range}"
   subnet-config-public-ip-on-launch = "true"
   
@@ -122,7 +122,7 @@ module "private-subnet"  {
  
   subnet-cidr-prefix = "${var.subnet-cidr-prefix}"
   subnet-cidr-unique = "2"
-  subnet-cidr-unique = "${var.subnet-cidr-unique}"
+  subnet-cidr-postfix = "${var.subnet-cidr-postfix}"
   subnet-cidr-range = "${var.subnet-cidr-range}"
   subnet-config-public-ip-on-launch = "true"
   
