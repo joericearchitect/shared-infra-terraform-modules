@@ -29,6 +29,7 @@ variable "subnet-config-public-ip-on-launch" {}
 # JRA Infra Variables
 # ---------------------------------------------------------------------------
 variable "environment-group" {}
+variable "environment-instance-id" {}
 variable "environment-canonical-id" {}
 variable "environment-display-id" {}
 variable "environment-name" {}
