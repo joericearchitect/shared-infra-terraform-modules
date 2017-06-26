@@ -2,7 +2,7 @@
 # Subnet
 # ---------------------------------------------------------------------------
 resource "aws_subnet" "subnet" {
-	vpc_id = "${aws_vpc.jra_vpc.id}"
+	vpc_id = "${var.aws-vpc-id}"
 
 	cidr_block = "${var.subnet-cidr-prefix}.${var.subnet-cidr-unique}.${var.subnet-cidr-postfix}/${var.subnet-cidr-range}"
 	availability_zone = "${var.aws-availability-zone-id}",
