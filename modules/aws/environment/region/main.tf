@@ -1,10 +1,3 @@
-# ---------------------------------------------------------------------------
-# Set Environment Instance Id
-# ---------------------------------------------------------------------------
-resource "random_id" "env-instance" {
-  byte_length = 8
-}
-
 module "env-vpc"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc"
   

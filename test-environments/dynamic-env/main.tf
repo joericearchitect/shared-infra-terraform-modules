@@ -1,10 +1,3 @@
-# ---------------------------------------------------------------------------
-# Set Environment Instance Id
-# ---------------------------------------------------------------------------
-resource "random_id" "env-instance" {
-  byte_length = 8
-}
-
 module "environment"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules/modules/aws/environment"
   
@@ -29,6 +22,7 @@ module "environment"  {
   environment-display-id = "${var.environment-display-id}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
+  environment-description = "${var.environment-description}"
   environment_type = "${var.environment_type}"
   environment-durability-type = "${var.environment-durability-type}"
   environment-size = "${var.environment-size}"
