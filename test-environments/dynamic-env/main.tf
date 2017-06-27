@@ -6,8 +6,12 @@ module "environment"  {
   aws_key_path = "${var.aws_key_path}"
   aws_key_name = "${var.aws_key_name}"
   
-  regions = "${var.regions}"
+  region-lookup = "${var.region-lookup}"
+  region-cidr-lookup = "${var.region-cidr-lookup}"
+  region-ami-lookup = "${var.region-ami-lookup}"
+  
   availability-zone-lookup = "${var.availability-zone-lookup}"
+  availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
   vpc-cidr-3 = "${var.vpc-cidr-3}"

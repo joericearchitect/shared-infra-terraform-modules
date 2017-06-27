@@ -10,6 +10,9 @@ module "vpc"  {
   vpc-cidr-4 = "${var.vpc-cidr-4}"
   vpc-cidr-range = "${var.vpc-cidr-range}"
   
+  subnet-cidr-4 = "${var.subnet-cidr-4}"
+  subnet-cidr-range = "${var.subnet-cidr-range}"
+  
   environment-group= "${var.environment-group}"
   environment-instance-id = "${var.environment-instance-id}"
   environment-canonical-id = "${var.environment-canonical-id}"
@@ -79,3 +82,4 @@ module "private-route-table"  {
   environment-durability-type = "${var.environment-durability-type}"
   environment-size = "${var.environment-size}"
 }
+

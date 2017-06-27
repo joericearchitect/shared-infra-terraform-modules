@@ -90,7 +90,7 @@ module "public-subnet"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/subnet"
   
   region = "${var.region}"
-  aws-availability-zone-id = "${lookup(var.availability-zone-lookup, "${var.region}.az-1")}"
+  availability-zone-id = "${lookup(var.availability-zone-lookup, "${var.region}.az-1")}"
   
   aws-vpc-id = "${module.vpc.aws-vpc-id}"
   aws-internet-gateway-id = "${module.internet-gateway.aws-internet-gateway-id}"
@@ -120,7 +120,7 @@ module "private-subnet"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/subnet"
   
   region = "${var.region}"
-  aws-availability-zone-id = "${lookup(var.availability-zone-lookup, "${var.region}.az-1")}"
+  availability-zone-id = "${lookup(var.availability-zone-lookup, "${var.region}.az-1")}"
   
   aws-vpc-id = "${module.vpc.aws-vpc-id}"
   aws-internet-gateway-id = "${module.internet-gateway.aws-internet-gateway-id}"
