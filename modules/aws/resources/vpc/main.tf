@@ -2,7 +2,7 @@
 # VPC
 # ---------------------------------------------------------------------------
 resource "aws_vpc" "jra_vpc" {
-	cidr_block = "${vpc-cidr-1}.${vpc-cidr-2}.${vpc-cidr-3}.${vpc-cidr-4}/${vpc-cidr-range}",
+	cidr_block = "${var.vpc-cidr-1}.${var.vpc-cidr-2}.${var.vpc-cidr-3}.${var.vpc-cidr-4}/${var.vpc-cidr-range}",
 	enable_dns_support = "true",
 	enable_dns_hostnames  = "true",
 
