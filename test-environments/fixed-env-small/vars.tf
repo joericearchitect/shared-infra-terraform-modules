@@ -10,22 +10,12 @@ variable "aws_key_name" {}
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {
-  default = "us-east-1"
+  description = "AWS Region"
 }
 
 variable "availability-zone-lookup" {
   description = "Availability Zones per region and failure zones"
   type = "map"
-  default = {
-    us-east-1.az-1 = "us-east-1a"
-    us-east-1.az-2 = "us-east-1b"
-    us-east-1.az-3 = "us-east-1c"
-    us-east-1.az-4 = "us-east-1d"
-    us-west-1.az-1 = "us-west-1a"
-    us-west-1.az-2 = "us-west-1b"
-    us-west-1.az-3 = "us-west-1c"
-    us-west-1.az-4 = "us-west-1d"
-  }
 }
 
 # ---------------------------------------------------------------------------
@@ -47,9 +37,6 @@ variable "vpc-cidr-range" {
     description = "CIDR for the whole VPC"
 }
 
-variable "subnet-cidr-3" {
-    description = "CIDR for the whole VPC"
-}
 variable "subnet-cidr-4" {
     description = "CIDR for the whole VPC"
 }
