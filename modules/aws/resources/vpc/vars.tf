@@ -26,6 +26,6 @@ variable "vpc-cidr-3" {}
 variable "vpc-cidr-4" {}
 variable "vpc-cidr-range" {}
 
-variable "vpc-cidr" {
-  default = "${vpc-cidr-1}.${vpc-cidr-2}.${vpc-cidr-3}.${vpc-cidr-4}/${vpc-cidr-range}"
-}
+variable "vpc-cidr" {}
+
+vpc-cidr = "${vpc-cidr-1}.${vpc-cidr-2}.${vpc-cidr-3}.${vpc-cidr-4}/${vpc-cidr-range}"
