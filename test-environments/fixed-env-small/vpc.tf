@@ -15,7 +15,7 @@ module "vpc"  {
   vpc-cidr-2 = "${var.vpc-cidr-2}"
   vpc-cidr-3 = "${var.vpc-cidr-3}"
   vpc-cidr-4 = "${var.vpc-cidr-4}"
-  vpc-cidr-range = "${var.range}"
+  vpc-cidr-range = "${var.vpc-cidr-range}"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${random_id.env-instance.b64}"
