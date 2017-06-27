@@ -20,7 +20,7 @@ module "private-subnet"  {
   subnet-config-public-ip-on-launch = 	"true"
   
   environment-group= "${var.environment-group}"
-  environment-instance-id = "${environment-instance-id}"
+  environment-instance-id = "${var.environment-instance-id}"
   environment-canonical-id = "${var.environment-canonical-id}"
   environment-display-id = "${var.environment-display-id}"
   environment-name = "${var.environment-name}"
