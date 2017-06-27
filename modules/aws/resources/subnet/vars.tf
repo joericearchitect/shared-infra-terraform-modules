@@ -19,10 +19,16 @@ variable "jra-subnet-type" {}
 # ---------------------------------------------------------------------------
 # AWS Subnet Config Variables
 # ---------------------------------------------------------------------------
-variable "subnet-cidr-prefix" {}
-variable "subnet-cidr-unique" {}
-variable "subnet-cidr-postfix" {}
+variable "vpc-cidr-1" {}
+variable "vpc-cidr-2" {}
+
+variable "subnet-cidr-3" {}
+variable "subnet-cidr-4" {}
 variable "subnet-cidr-range" {}
+
+variable "subnet-cidr" {
+  default = "${vpc-cidr-1}.${vpc-cidr-2}.${subnet-cidr-3}.${subnet-cidr-4}/${subnet-cidr-range}"
+}
 variable "subnet-config-public-ip-on-launch" {}
 
 # ---------------------------------------------------------------------------

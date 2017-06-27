@@ -31,20 +31,30 @@ variable "availability-zone-lookup" {
 # ---------------------------------------------------------------------------
 # VPC Variables
 # ---------------------------------------------------------------------------
-variable "vpc_cidr" {
+variable "vpc-cidr-1" {
+    description = "CIDR for the whole VPC"
+}
+variable "vpc-cidr-2" {
+    description = "CIDR for the whole VPC"
+}
+variable "vpc-cidr-3" {
+    description = "CIDR for the whole VPC"
+}
+variable "vpc-cidr-4" {
+    description = "CIDR for the whole VPC"
+}
+variable "vpc-cidr-range" {
     description = "CIDR for the whole VPC"
 }
 
-variable "subnet-cidr-prefix" {
-    description = "CIDR for the Public Subnet"
+variable "subnet-cidr-3" {
+    description = "CIDR for the whole VPC"
 }
-
-variable "subnet-cidr-postfix" {
-    description = "CIDR for the Public Subnet"
+variable "subnet-cidr-4" {
+    description = "CIDR for the whole VPC"
 }
-
 variable "subnet-cidr-range" {
-    description = "CIDR for the Public Subnet"
+    description = "CIDR for the whole VPC"
 }
 
 
@@ -70,7 +80,7 @@ variable "environment-description" {
     description = "A description of the enviornment"
 }
 variable "environment_type" {
-    description = "The environment this resource is running in"
+    description = "The type of environment this resource is running in"
 }
 variable "environment-durability-type" {
     description = "Durability type for the environment.  eg: fixed, disposable, short-term, etc"
