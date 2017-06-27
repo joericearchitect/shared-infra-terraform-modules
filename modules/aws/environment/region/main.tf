@@ -8,7 +8,7 @@ resource "random_id" "env-instance" {
 module "env-vpc"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc"
   
-  region = "${var.regions[0]}"
+  region = "${var.region}"
   availability-zone-lookup = "${var.availability-zone-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
