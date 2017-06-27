@@ -25,9 +25,6 @@ variable "availability-zone-lookup" {
 variable "vpc-cidr-1" {
     description = "CIDR for the whole VPC"
 }
-variable "vpc-cidr-2" {
-    description = "CIDR for the whole VPC"
-}
 variable "vpc-cidr-3" {
     description = "CIDR for the whole VPC"
 }

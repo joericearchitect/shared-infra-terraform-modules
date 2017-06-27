@@ -31,6 +31,7 @@ variable "subnet-cidr-range" {}
 # JRA Infra Variables
 # ---------------------------------------------------------------------------
 variable "environment-group" {}
+variable "environment-instance-id" {}
 variable "environment-canonical-id" {}
 variable "environment-display-id" {}
 variable "environment-name" {}
