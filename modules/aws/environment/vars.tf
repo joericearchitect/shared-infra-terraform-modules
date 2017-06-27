@@ -9,15 +9,31 @@ variable "aws_key_name" {}
 # ---------------------------------------------------------------------------
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
-variable "regions" {
-  description = "List of regions"
-  type = "list"
+variable "region-lookup" {
+  description = "Lookup of region name to Aws region, i.e. 'region-1 = us-east-1', 'region-2 = us-west=1'"
+  type = "map"
+}
+
+variable "region-cidr-lookup" {
+  description = "Lookup of region name to unique cider block part.  i.e. 'region-1 = 0', 'region-2= 1'"
+  type = "map"
+}
+
+variable "region-ami-lookup" {
+  description = "Lookup of region name to AMI. "
+  type = "map"
 }
 
 variable "availability-zone-lookup" {
-  description = "Availability Zones per region and failure zones"
+  description = "Lookup of region name / availability zone to AWS availability zone"
   type = "map"
 }
+
+variable "availability-zone-subnet-cidr-lookup" {
+  description = "Lookup of region name / availability zone name to unique subnet cidr block"
+  type = "map"
+}
+
 
 # ---------------------------------------------------------------------------
 # VPC Variables

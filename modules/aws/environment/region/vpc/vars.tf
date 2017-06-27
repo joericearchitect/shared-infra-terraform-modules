@@ -2,10 +2,14 @@
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {}
+variable "region-name" {}
 
-variable "availability-zone-lookup" {
-  type = "map"
-}
+variable "region-ami-lookup" { type = "map" }
+
+variable "availability-zone-lookup" { type = "map" }
+
+variable "availability-zone-subnet-cidr-lookup" { type = "map" }
+
 
 # ---------------------------------------------------------------------------
 # VPC Variables

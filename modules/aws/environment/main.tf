@@ -13,11 +13,17 @@ module "region-1"  {
   aws_key_path = "${var.aws_key_path}"
   aws_key_name = "${var.aws_key_name}"
   
-  region = "${var.regions[0]}"
+  region = "${lookup(var.region-lookup, "region-1")}"
+  region-name = "region-1"
+  
+  region-cidr-lookup = "${var.region-cidr-lookup}"
+  region-ami-lookup = "${var.region-ami-lookup}"
+  
   availability-zone-lookup = "${var.availability-zone-lookup}"
+  availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
-  vpc-cidr-2 = "0"
+  vpc-cidr-2 = "${lookup(var.region-cidr-lookup, "region-1")}"
   vpc-cidr-3 = "${var.vpc-cidr-3}"
   vpc-cidr-4 = "${var.vpc-cidr-4}"
   vpc-cidr-range = "${var.vpc-cidr-range}"

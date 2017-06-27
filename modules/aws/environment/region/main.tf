@@ -2,7 +2,12 @@ module "env-vpc"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc"
   
   region = "${var.region}"
+  region-name = "${var.region-name}"
+  
+  region-ami-lookup = "${var.region-ami-lookup}"
+  
   availability-zone-lookup = "${var.availability-zone-lookup}"
+  availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
   vpc-cidr-2 = "${var.vpc-cidr-2}"
