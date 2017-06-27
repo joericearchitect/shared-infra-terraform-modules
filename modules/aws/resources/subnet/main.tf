@@ -4,7 +4,7 @@
 resource "aws_subnet" "subnet" {
 	vpc_id = "${var.aws-vpc-id}"
 
-	cidr_block = "${var.subnet-cidr}"
+	cidr_block = "${vpc-cidr-1}.${vpc-cidr-2}.${subnet-cidr-3}.${subnet-cidr-4}/${subnet-cidr-range}"
 	availability_zone = "${var.aws-availability-zone-id}",
 	map_public_ip_on_launch = "${var.subnet-config-public-ip-on-launch}"
 
