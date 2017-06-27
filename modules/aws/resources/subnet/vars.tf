@@ -26,6 +26,8 @@ variable "subnet-cidr-3" {}
 variable "subnet-cidr-4" {}
 variable "subnet-cidr-range" {}
 
+variable "subnet-config-public-ip-on-launch" {}
+
 # ---------------------------------------------------------------------------
 # JRA Infra Variables
 # ---------------------------------------------------------------------------
