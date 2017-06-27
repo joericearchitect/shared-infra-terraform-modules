@@ -8,7 +8,6 @@ variable "availability-zone-id" {}
 variable "availability-zone-name" {}
 
 variable "region-ami-lookup" { type = "map" }
-variable "availability-zone-lookup" { type = "map" }
 variable "availability-zone-subnet-cidr-lookup" { type = "map" }
 
 # ---------------------------------------------------------------------------
@@ -39,7 +38,6 @@ variable "environment-canonical-id" {}
 variable "environment-display-id" {}
 variable "environment-name" {}
 variable "environment-display-name" {}
-variable "environment-description" {}
 variable "environment_type" {}
 variable "environment-durability-type" {}
 variable "environment-size" {}
