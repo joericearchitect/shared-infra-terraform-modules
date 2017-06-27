@@ -1,5 +1,5 @@
 module "env-private-subnet"  {
-  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/vpc/availability-zone/private-subnet"
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone/private-subnet"
   
   region = "${var.region}"
   region-name = "${var.region-name}"
