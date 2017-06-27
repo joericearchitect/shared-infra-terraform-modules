@@ -1,5 +1,5 @@
 module "env-availability-zone-1"  {
-  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/vpc/availability-zone"
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone"
   
   region = "${var.region}"
   region-name = "${var.region-name}"
@@ -8,7 +8,6 @@ module "env-availability-zone-1"  {
   availability-zone-name = "az-1"
   
   region-ami-lookup = "${var.region-ami-lookup}"
-  
   availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
   
   aws-vpc-id = "${module.vpc.aws-vpc-id}"
