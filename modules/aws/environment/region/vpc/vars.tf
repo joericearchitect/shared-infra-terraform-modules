@@ -11,6 +11,7 @@ variable "availability-zone-lookup" {
 # VPC Variables
 # ---------------------------------------------------------------------------
 variable "vpc-cidr-1" {}
+variable "vpc-cidr-2" {}
 variable "vpc-cidr-3" {}
 variable "vpc-cidr-4" {}
 variable "vpc-cidr-range" {}
