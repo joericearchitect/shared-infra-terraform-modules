@@ -31,6 +31,7 @@ module "region-1"  {
   environment-display-id = "${var.environment-display-id}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
+  environment-description = "${var.environment-description}"
   environment_type = "${var.environment_type}"
   environment-durability-type = "${var.environment-durability-type}"
   environment-size = "${var.environment-size}"
