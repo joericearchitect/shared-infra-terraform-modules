@@ -2,5 +2,5 @@
 # Output Variables
 # ---------------------------------------------------------------------------
 output "aws-subnet-id" {
-  value = "${module.private-subnet.aws-subnet-id}"
+  value = "${module.public-subnet.aws-subnet-id}"
 }
