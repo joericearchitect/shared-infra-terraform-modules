@@ -20,9 +20,9 @@ module "env-public-swarm-node-1"  {
   
   jra-swarm-node-type = "${lookup(var.public-swarm-node-type-lookup, "public-swarm-node-type-1")}"
   jra-swarm-node-type-name = "public-swarm-node-type-1"
-  jra-swarm-node-role = "${var.public-swarm-node-type-swarm-node-role-lookup, "public-swarm-node-type-1")}"
-  jra-swarm-node-aws-instance-type = "${var.public-swarm-node-type-aws-instance-type-lookup, "public-swarm-node-type-1")}"
-  jra-swarm-node-aws-instance-count = "${var.public-swarm-node-type-aws-instance-count-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-role = "${lookup(var.public-swarm-node-type-swarm-node-role-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-aws-instance-type = "${lookup(var.public-swarm-node-type-aws-instance-type-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-aws-instance-count = "${lookup(var.public-swarm-node-type-aws-instance-count-lookup, "public-swarm-node-type-1")}"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${var.environment-instance-id}"
