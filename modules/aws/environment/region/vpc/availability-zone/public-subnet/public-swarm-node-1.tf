@@ -1,4 +1,4 @@
-module "env-private-swarm-node-1"  {
+module "env-public-swarm-node-1"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone/swarm-node"
   
   region = "${var.region}"
@@ -16,13 +16,13 @@ module "env-private-swarm-node-1"  {
   aws-subnet-id = "${var.aws-subnet-id}"
   aws-ec2-instance-ami = "${var.aws-ec2-instance-ami}"
   
-  jra-subnet-type = "private"
+  jra-subnet-type = "public"
   
-  jra-swarm-node-type = "${lookup(private-swarm-node-type-lookup, "private-swarm-node-type-1")}"
-  jra-swarm-node-type-name = "private-swarm-node-type-1"
-  jra-swarm-node-role = "${private-swarm-node-type-swarm-node-role-lookup, "private-swarm-node-type-1")}"
-  jra-swarm-node-aws-instance-type = "${private-swarm-node-type-aws-instance-type-lookup, "private-swarm-node-type-1")}"
-  jra-swarm-node-aws-instance-count = "${private-swarm-node-type-aws-instance-count-lookup, "private-swarm-node-type-1")}"
+  jra-swarm-node-type = "${lookup(public-swarm-node-type-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-type-name = "public-swarm-node-type-1"
+  jra-swarm-node-role = "${public-swarm-node-type-swarm-node-role-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-aws-instance-type = "${public-swarm-node-type-aws-instance-type-lookup, "public-swarm-node-type-1")}"
+  jra-swarm-node-aws-instance-count = "${public-swarm-node-type-aws-instance-count-lookup, "public-swarm-node-type-1")}"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${var.environment-instance-id}"
