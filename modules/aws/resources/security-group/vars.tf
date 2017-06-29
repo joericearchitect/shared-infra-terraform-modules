@@ -1,12 +1,21 @@
 # ---------------------------------------------------------------------------
+# Region, Avail Zone, and AMI Info
+# ---------------------------------------------------------------------------
+variable "region" {}
+variable "availability-zone-id" {}
+
+# ---------------------------------------------------------------------------
 # AWS Resource Variables
 # ---------------------------------------------------------------------------
-variable "aws-subnet-id" {}
+variable "aws-vpc-id" {}
 
 # ---------------------------------------------------------------------------
 # JRA Infra Swarm Node Variables
 # ---------------------------------------------------------------------------
+variable "jra-subnet-type" {}
 variable "jra-swarm-node-type" {}
+variable "jra-swarm-node-type-name" {}
+variable "jra-swarm-node-role" {}
 
 # ---------------------------------------------------------------------------
 # JRA Infra Envoironment Variables

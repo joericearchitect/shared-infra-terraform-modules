@@ -31,6 +31,9 @@ variable "subnet-config-public-ip-on-launch" {}
 # ---------------------------------------------------------------------------
 # JRA Infra Variables
 # ---------------------------------------------------------------------------
+variable "jra-failure-zone" {}
+variable "jra-failure-zone-name" {}
+
 variable "environment-group" {}
 variable "environment-instance-id" {}
 variable "environment-canonical-id" {}

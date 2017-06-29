@@ -1,17 +1,24 @@
-module "environment"  {
-  source = "github.com/joericearchitect/shared-infra-terraform-modules/modules/aws/environment"
-  
-  aws_access_key = "${var.aws_access_key}"
-  aws_secret_key = "${var.aws_secret_key}"
-  aws_key_path = "${var.aws_key_path}"
+module "env-availability-zone-3"  {
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone"
+    
   aws_key_name = "${var.aws_key_name}"
   
-  region-lookup = "${var.region-lookup}"
-  region-cidr-lookup = "${var.region-cidr-lookup}"
-  region-ami-lookup = "${var.region-ami-lookup}"
+  region = "${var.region}"
+  region-name = "${var.region-name}"
   
-  availability-zone-lookup = "${var.availability-zone-lookup}"
+  availability-zone-id = "${lookup(var.availability-zone-lookup, "${var.region-name}.az-3")}"
+  availability-zone-name = "az-3"
+  
+  jra-failure-zone = "${var.region}.${lookup(var.availability-zone-lookup, "${var.region-name}.az-3")}"
+  jra-failure-zone-name = "${var.region-name}.az-3"
+  
+  region-ami-lookup = "${var.region-ami-lookup}"
   availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
+  
+  aws-vpc-id = "${module.vpc.aws-vpc-id}"
+  aws-internet-gateway-id = "${module.internet-gateway.aws-internet-gateway-id}"
+  aws-private-route-table-id = "${module.private-route-table.aws-route-table-id}"
+  aws-public-route-table-id = "${module.public-route-table.aws-route-table-id}"
   
   public-swarm-node-type-lookup = "${var.public-swarm-node-type-lookup}"
   private-swarm-node-type-lookup = "${var.private-swarm-node-type-lookup}"
@@ -26,19 +33,17 @@ module "environment"  {
   private-swarm-node-type-swarm-node-role-lookup = "${var.private-swarm-node-type-swarm-node-role-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
-  vpc-cidr-3 = "${var.vpc-cidr-3}"
-  vpc-cidr-4 = "${var.vpc-cidr-4}"
-  vpc-cidr-range = "${var.vpc-cidr-range}"
+  vpc-cidr-2 = "${var.vpc-cidr-2}"
   
   subnet-cidr-4 = "${var.subnet-cidr-4}"
   subnet-cidr-range = "${var.subnet-cidr-range}"
   
-  environment-group= "${var.environment-group}"
+  environment-group = "${var.environment-group}"
+  environment-instance-id = "${var.environment-instance-id}"
   environment-canonical-id = "${var.environment-canonical-id}"
   environment-display-id = "${var.environment-display-id}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
-  environment-description = "${var.environment-description}"
   environment_type = "${var.environment_type}"
   environment-durability-type = "${var.environment-durability-type}"
   environment-size = "${var.environment-size}"

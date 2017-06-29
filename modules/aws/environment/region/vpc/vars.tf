@@ -1,4 +1,9 @@
 # ---------------------------------------------------------------------------
+# AWS Access & Key variables - must be passed ins
+# ---------------------------------------------------------------------------
+variable "aws_key_name" {}
+
+# ---------------------------------------------------------------------------
 # Region, Avail Zone, and AMI Info
 # ---------------------------------------------------------------------------
 variable "region" {}
@@ -7,9 +12,22 @@ variable "region-name" {}
 variable "region-ami-lookup" { type = "map" }
 
 variable "availability-zone-lookup" { type = "map" }
-
 variable "availability-zone-subnet-cidr-lookup" { type = "map" }
 
+# ---------------------------------------------------------------------------
+# Swarm Node Variables
+# ---------------------------------------------------------------------------
+variable "public-swarm-node-type-lookup" { type = "map" }
+variable "private-swarm-node-type-lookup" { type = "map" }
+
+variable "public-swarm-node-type-aws-instance-type-lookup" { type = "map" }
+variable "private-swarm-node-type-aws-instance-type-lookup" { type = "map" }
+
+variable "public-swarm-node-type-aws-instance-count-lookup" { type = "map" }
+variable "private-swarm-node-type-aws-instance-count-lookup" { type = "map" }
+
+variable "public-swarm-node-type-swarm-node-role-lookup" { type = "map" }
+variable "private-swarm-node-type-swarm-node-role-lookup" { type = "map" }
 
 # ---------------------------------------------------------------------------
 # VPC Variables

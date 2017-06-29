@@ -1,34 +1,37 @@
-module "env-vpc"  {
-  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc"
+module "env-public-subnet"  {
+  source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone/public-subnet"
+    
+  aws_key_name = "${var.aws_key_name}"
   
   region = "${var.region}"
   region-name = "${var.region-name}"
   
-  region-ami-lookup = "${var.region-ami-lookup}"
+  availability-zone-id = "${var.availability-zone-id}"
+  availability-zone-name = "${var.availability-zone-name}" 
   
-  availability-zone-lookup = "${var.availability-zone-lookup}"
+  jra-failure-zone = "${var.jra-failure-zone}"
+  jra-failure-zone-name = "${var.jra-failure-zone-name}"
+  
+  region-ami-lookup = "${var.region-ami-lookup}"
   availability-zone-subnet-cidr-lookup = "${var.availability-zone-subnet-cidr-lookup}"
   
+  subnet-name = "subnet-2"
+  
   public-swarm-node-type-lookup = "${var.public-swarm-node-type-lookup}"
-  private-swarm-node-type-lookup = "${var.private-swarm-node-type-lookup}"
-  
   public-swarm-node-type-aws-instance-type-lookup = "${var.public-swarm-node-type-aws-instance-type-lookup}"
-  private-swarm-node-type-aws-instance-type-lookup = "${var.private-swarm-node-type-aws-instance-type-lookup}"
-  
   public-swarm-node-type-aws-instance-count-lookup = "${var.public-swarm-node-type-aws-instance-count-lookup}"
-  private-swarm-node-type-aws-instance-count-lookup = "${var.private-swarm-node-type-aws-instance-count-lookup}"
-  
   public-swarm-node-type-swarm-node-role-lookup = "${var.public-swarm-node-type-swarm-node-role-lookup}"
-  private-swarm-node-type-swarm-node-role-lookup = "${var.private-swarm-node-type-swarm-node-role-lookup}"
   
   vpc-cidr-1 = "${var.vpc-cidr-1}"
   vpc-cidr-2 = "${var.vpc-cidr-2}"
-  vpc-cidr-3 = "${var.vpc-cidr-3}"
-  vpc-cidr-4 = "${var.vpc-cidr-4}"
-  vpc-cidr-range = "${var.vpc-cidr-range}"
   
+  subnet-cidr-3 = "${lookup(var.availability-zone-subnet-cidr-lookup, "${var.availability-zone-name}.subnet-2")}"
   subnet-cidr-4 = "${var.subnet-cidr-4}"
   subnet-cidr-range = "${var.subnet-cidr-range}"
+  
+  aws-vpc-id = "${var.aws-vpc-id}"
+  aws-internet-gateway-id = "${var.aws-internet-gateway-id}"
+  aws-route-table-id = "${var.aws-public-route-table-id}"
   
   environment-group= "${var.environment-group}"
   environment-instance-id = "${var.environment-instance-id}"
@@ -36,7 +39,6 @@ module "env-vpc"  {
   environment-display-id = "${var.environment-display-id}"
   environment-name = "${var.environment-name}"
   environment-display-name = "${var.environment-display-name}"
-  environment-description = "${var.environment-description}"
   environment_type = "${var.environment_type}"
   environment-durability-type = "${var.environment-durability-type}"
   environment-size = "${var.environment-size}"

@@ -35,6 +35,49 @@ variable "availability-zone-subnet-cidr-lookup" {
 }
 
 # ---------------------------------------------------------------------------
+# Swarm Node Variables
+# ---------------------------------------------------------------------------
+variable "public-swarm-node-type-lookup" {
+  description = "Lookup of public swarm node types"
+  type = "map"
+}
+
+variable "private-swarm-node-type-lookup" {
+  description = "Lookup of private swarm node types"
+  type = "map"
+}
+
+variable "public-swarm-node-type-aws-instance-type-lookup" {
+  description = "Lookup of public swarm node types to aws instance types"
+  type = "map"
+}
+
+variable "private-swarm-node-type-aws-instance-type-lookup" {
+  description = "Lookup of private swarm node types to aws instance types"
+  type = "map"
+}
+
+variable "public-swarm-node-type-aws-instance-count-lookup" {
+  description = "Lookup of public swarm node types to # of aws instances to create"
+  type = "map"
+}
+
+variable "private-swarm-node-type-aws-instance-count-lookup" {
+  description = "Lookup of private swarm node types to # of aws instances to create"
+  type = "map"
+}
+
+variable "public-swarm-node-type-swarm-node-role-lookup" {
+  description = "Lookup of public swarm node types to # of aws instances to create"
+  type = "map"
+}
+
+variable "private-swarm-node-type-swarm-node-role-lookup" {
+  description = "Lookup of private swarm node types to # of aws instances to create"
+  type = "map"
+}
+
+# ---------------------------------------------------------------------------
 # VPC Variables
 # ---------------------------------------------------------------------------
 variable "vpc-cidr-1" {

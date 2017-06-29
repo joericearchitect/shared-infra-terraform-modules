@@ -1,6 +1,6 @@
 
-resource "aws_security_group" "public_app-ui-web" {
-	name = "${var.environment-name}.jra-sg.${var.region}-public-app-ui-web"
+resource "aws_security_group" "security-group" {
+	name = "${var.environment-name}.jra-sg.${var.region}-${var.jra-subnet-type}-${var.jra-swarm-node-type}"
 	description = "Security Group for public web ui apps"
 
 	ingress {
@@ -17,10 +17,10 @@ resource "aws_security_group" "public_app-ui-web" {
 		cidr_blocks = ["0.0.0.0/0"]
 	}
 
-	vpc_id = "${aws_vpc.jra_vpc.id}",
+	vpc_id = "${var.aws-vpc-id}",
 
 	tags {
-        Name = "${var.environment-name}.sg.${var.region}-public-app-ui-web",
+        Name = "${var.environment-name}.jra-sg.${var.region}-${var.jra-subnet-type}-${var.jra-swarm-node-type}",
         jra.environment = "${var.environment-name}",
         jra.environment_type = "${var.environment_type}",
     	jra.environment-size = "${var.environment-size}",

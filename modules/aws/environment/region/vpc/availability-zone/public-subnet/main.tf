@@ -5,6 +5,9 @@ module "public-subnet"  {
   
   availability-zone-id = "${var.availability-zone-id}"
   
+  jra-failure-zone = "${var.jra-failure-zone}"
+  jra-failure-zone-name = "${var.jra-failure-zone-name}"
+  
   aws-vpc-id = "${var.aws-vpc-id}"
   aws-internet-gateway-id = "${var.aws-internet-gateway-id}"
   aws-route-table-id = "${var.aws-route-table-id}"
