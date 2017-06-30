@@ -1,6 +1,8 @@
 module "env-ec2-instance"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/ec2-instance"
  
+  aws_key_name = "${var.aws_key_name}"
+  
   region = "${var.region}"
   region-name = "${var.region-name}"
   
@@ -14,6 +16,7 @@ module "env-ec2-instance"  {
   
   aws-vpc-id = "${var.aws-vpc-id}"
   aws-subnet-id = "${var.aws-subnet-id}"
+  aws-security-group-id = "${module.env-security-group.aws-security-group-id}"
   aws-ec2-instance-ami = "${var.aws-ec2-instance-ami}"
   
   jra-subnet-type = "${var.jra-subnet-type}"

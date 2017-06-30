@@ -12,6 +12,8 @@ variable "region-name" {}
 variable "availability-zone-id" {}
 variable "availability-zone-name" {}
 
+variable "subnet-name" {}
+
 # ---------------------------------------------------------------------------
 # AWS Resource Variables
 # ---------------------------------------------------------------------------
