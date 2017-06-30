@@ -1,6 +1,8 @@
 module "private-subnet"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/resources/subnet"
   
+  aws_key_name = "${var.aws_key_name}"
+  
   region = "${var.region}"
   
   availability-zone-id = "${var.availability-zone-id}"

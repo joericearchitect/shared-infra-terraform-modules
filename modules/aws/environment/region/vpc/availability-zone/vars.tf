@@ -16,11 +16,6 @@ variable "region-ami-lookup" { type = "map" }
 variable "availability-zone-subnet-cidr-lookup" { type = "map" }
 
 # ---------------------------------------------------------------------------
-# AWS Access & Key variables - must be passed ins
-# ---------------------------------------------------------------------------
-variable "aws_key_name" {}
-
-# ---------------------------------------------------------------------------
 # AWS Resource Variables
 # ---------------------------------------------------------------------------
 variable "aws-vpc-id" {}

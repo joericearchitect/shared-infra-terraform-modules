@@ -1,6 +1,8 @@
 module "env-private-swarm-node-1"  {
   source = "github.com/joericearchitect/shared-infra-terraform-modules//modules/aws/environment/region/vpc/availability-zone/swarm-node"
   
+  aws_key_name = "${var.aws_key_name}"
+  
   region = "${var.region}"
   region-name = "${var.region-name}"
   
