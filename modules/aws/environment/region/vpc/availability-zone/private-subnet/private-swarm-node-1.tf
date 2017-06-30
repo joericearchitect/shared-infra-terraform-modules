@@ -13,8 +13,8 @@ module "env-private-swarm-node-1"  {
   subnet-name = "${var.subnet-name}"
   
   aws-vpc-id = "${var.aws-vpc-id}"
-  aws-subnet-id = "${var.aws-subnet-id}"
-  aws-ec2-instance-ami = "${var.aws-ec2-instance-ami}"
+  aws-subnet-id = "${module.private-subnet.aws-subnet-id}"
+  aws-ec2-instance-ami = "${lookup(var.region-ami-lookup, "${var.region-name}.${var.availability-zone-name}")}"
   
   jra-subnet-type = "private"
   
