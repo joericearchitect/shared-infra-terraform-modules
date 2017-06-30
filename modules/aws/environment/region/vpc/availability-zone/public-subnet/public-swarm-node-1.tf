@@ -14,7 +14,7 @@ module "env-public-swarm-node-1"  {
   
   aws-vpc-id = "${var.aws-vpc-id}"
   aws-subnet-id = "${module.public-subnet.aws-subnet-id}"
-  aws-ec2-instance-ami = "${lookup(var.region-ami-lookup, "${var.region-name}.${var.availability-zone-name}")}"
+  aws-ec2-instance-ami = "${lookup(var.region-ami-lookup, "${var.region-name}")}"
   
   jra-subnet-type = "public"
   
